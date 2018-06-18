@@ -6,18 +6,19 @@ app.vars = {}
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
-	default_stock = 'GOOG'
-	if request.method == 'GET':
-		return render_template('index.html', stock_id = default_stock)
+  default_stock = 'GOOG'
+  if request.method == 'GET':
+    return render_template('about.html', stock_id = default_stock)
   else:
-  	# request was a POST
-  	app.vars['stock'] = request.form['stock_id']
+    return redirect('about.html')#, stock_id = default_stock)
+  	# # request was a POST
+  	# app.vars['stock'] = request.form['stock_id']
 
-  	f = open('%s.txt'%(app.vars['stock']), 'w')
-  	f.write('Stock: %s\n'%(app.vars['stock']))
-  	f.close()
+  	# f = open('%s.txt'%(app.vars['stock']), 'w')
+  	# f.write('Stock: %s\n'%(app.vars['stock']))
+  	# f.close()
 
-  	return render_template('figure.html', stock_id = default_stock)
+  	# return render_template('figure.html', stock_id = default_stock)
 
 @app.route('/figure')
 def figure():
