@@ -10,7 +10,6 @@ def index():
   if request.method == 'GET':
     return render_template('stockinfo.html', stock_id = default_stock)
   else:
-    return redirect('stockinfo.html', stock_id = default_stock)
   	# request was a POST
   	app.vars['stock'] = request.form['stock_id']
 
