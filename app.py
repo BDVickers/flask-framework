@@ -19,9 +19,6 @@ def index():
 
   	return render_template('figure.html', stock_id = default_stock)
 
-
-  	return render_template('index.html')
-
 @app.route('/figure')
 def figure():
 	return render_template('figure.html')
