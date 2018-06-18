@@ -1,22 +1,35 @@
 <!doctype html>
-<title>Pulling Stock Quotes</title>
-<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style.css')}}'>
-<div class=page>
-  <h1>A short quiz</h1>
-  <div class=metanav>
+<html lang="en">
+<link rel="stylesheet" href={{ url_for('static', filename='style.css') }} />
 
-<h4>
-You will be asked for a stock and have a figure returned.
-</h4>
+	<head>
+		<meta charset="utf-8">
+		<title>Stock Ticker</title>
+		
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class=page>
+  			<h1>Stock price from Quandl</h1>
+		</div>
+		
+		<form id="input" method="POST" action="/result">
+			<p>
+			Input stock quote (e.g. GOOG): <input type="text" name="dataset_code">
+			</p>
+			<p>
+				<input type="checkbox" name="check" value="open"> Opening price
+				<br>
+				<input type="checkbox" name="check" value="high"> High price
+				<br>
+				<input type="checkbox" name="check" value="low"> Low price
+				<br>
+				<input type="checkbox" name="check" value="close"> Closing price
+				<br>
+			<input type="submit">
+			</p>
+		</form>
 
-<form id='stockinfoform' method='post' action='figure' > <!-- action is the URL you want to move to next-->
-   <p>
-   Enter the stock ID: <input type='text' name='stock_id' />
-   </p>
-   <p>
-   <input type='submit' value='Submit' /> <!-- value is the text that will appear on the button. -->
-   </p>
-</form>
-
-</div>
-</div>
+	</body>
+</html>
