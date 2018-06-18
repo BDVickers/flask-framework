@@ -4,7 +4,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return render_template('index.html')
+  r = requests.get('http://httpbin.org/status/418')
+  print(r.text)
+  return HttpResponse('<pre>' + r.text + '</pre>')
+#  return render_template('index.html')
 
 @app.route('/about')
 def about():
