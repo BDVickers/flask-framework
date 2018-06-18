@@ -1,0 +1,22 @@
+<!doctype html>
+<title>A short quiz</title>
+<link rel=stylesheet type=text/css href='{{ url_for('static',filename='style.css')}}'>
+<div class=page>
+  <h1>A short quiz</h1>
+  <div class=metanav>
+
+<h4>
+You will be asked for a stock and have a figure returned.
+</h4>
+
+<form id='stockinfoform' method='post' action='figure' > <!-- action is the URL you want to move to next-->
+   <p>
+   Enter the stock ID: <input type='text' name='stock_id' />
+   </p>
+   <p>
+   <input type='submit' value='Submit' /> <!-- value is the text that will appear on the button. -->
+   </p>
+</form>
+
+</div>
+</div>
