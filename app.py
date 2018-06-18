@@ -3,10 +3,8 @@ from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 @app.route('/')
-def index(request):
-  times = int(os.environ.get('TIMES', 3))
-  return HttpResponse('Hello! ' * times)
-#  return render_template('index.html')
+def index():
+  return render_template('index.html')
 
 @app.route('/about')
 def about():
