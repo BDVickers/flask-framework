@@ -21,6 +21,8 @@ def index():
 
 @app.route('/figure')
 def figure():
+  https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=GOOG&interval=1min&apikey=M388VQYSPCRW5TYU
+
 	return render_template('figure.html')
 
 @app.route('/about')
